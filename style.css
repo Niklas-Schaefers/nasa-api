@@ -1,8 +1,78 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #a8dadc;
+  --secondary-color: #e63946;
+  --text-color: #ffe8d6;
+  --secondary-text-color: #1d3557;
+  --background-color: #457b9d;
+  --border-color: #f1faee;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #ac3e50;
-  margin-top: 60px;
+  color: white;
+  background-color: var(--secondary-text-color);
+  margin: 0;
+  grid-template-rows: 2em auto 2em;
+  display: grid;
+  background-image: url("./assets/space.jpeg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.hero {
+  color: black;
+  display: grid;
+  justify-content: end;
+  grid-template-columns: auto auto auto;
+  margin: 2em 0 0 0;
+}
+
+ul {
+  display: grid;
+  margin: 0;
+  justify-content: end;
+  grid-template-columns: auto auto auto auto;
+  padding: 1em 2em;
+  justify-self: center;
+  list-style-type: none;
+  color: white;
+  border-top-left-radius: 1em;
+}
+
+ul a {
+  padding: 0 2em;
+  align-self: center;
+  text-decoration: none;
+  color: white;
+}
+
+.hero input {
+  padding: 0 7em;
+  background-color: transparent;
+  text-align: center;
+  border-style: solid;
+}
+.hero input::placeholder {
+  color: white;
+}
+
+.hero img {
+  height: 4em;
+  margin-right: 3em;
 }
