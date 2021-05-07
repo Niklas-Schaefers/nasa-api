@@ -21,13 +21,18 @@
   color: white;
   background-color: var(--secondary-text-color);
   margin: 0;
-  grid-template-rows: 2em auto 2em;
+  padding-top: 2em;
+  grid-template-rows: 3em auto auto;
+  grid-gap: 2em;
   display: grid;
   background-image: url("./assets/space.jpeg");
   height: 100vh;
-  background-position: center;
+
+  /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: fixed;
+  width: 100vw;
 }
 
 body {
@@ -38,9 +43,10 @@ body {
 .hero {
   color: black;
   display: grid;
-  justify-content: end;
+
+  /* justify-content: end; */
   grid-template-columns: auto auto auto;
-  margin: 2em 0 0 0;
+  width: 100vw;
 }
 
 ul {
@@ -48,7 +54,7 @@ ul {
   margin: 0;
   justify-content: end;
   grid-template-columns: auto auto auto auto;
-  padding: 1em 2em;
+  padding: 0 0;
   justify-self: center;
   list-style-type: none;
   color: white;
@@ -63,16 +69,46 @@ ul a {
 }
 
 .hero input {
-  padding: 0 7em;
   background-color: transparent;
   text-align: center;
   border-style: solid;
+  color: white;
+  border-radius: 10em;
 }
 .hero input::placeholder {
   color: white;
 }
 
+footer {
+  align-self: end;
+  grid-row: 3;
+  padding-bottom: 2em;
+}
+
+section img {
+  width: 20em;
+}
+
 .hero img {
   height: 4em;
-  margin-right: 3em;
+  justify-self: center;
+}
+
+.itemSection {
+  grid-gap: 1.5em;
+  width: 100vw;
+  padding: 0 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: scroll;
+}
+
+.itemCard {
+  width: 20em;
+  text-align: justify;
+}
+
+.itemCard p {
+  text-justify: auto;
 }

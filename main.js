@@ -1,5 +1,8 @@
 import "./style.css";
 import { createElement } from "./utils/elements";
+import { getItems, removeChildren } from "./utils/api";
+import { debounce } from "./utils/timer";
+import { createItemElements } from "./components/item";
 
 const header = createElement("header", {
   className: "hero",
@@ -9,6 +12,15 @@ const header = createElement("header", {
       className: "input",
       placeholder: "Search",
       autofocus: true,
+      oninput: debounce((event) => {
+        removeChildren(itemsSection);
+        const search = event.target.value;
+        getItems(search).then((items) => {
+          console.log(items);
+          const itemElements = items.map(createItemElements);
+          itemsSection.append(...itemElements);
+        });
+      }, 300),
     }),
     createElement("ul", {
       className: "menu",
@@ -30,7 +42,7 @@ const header = createElement("header", {
   ],
 });
 
-const itemSection = createElement("section", {
+const itemsSection = createElement("section", {
   className: "itemSection",
 });
 
@@ -39,4 +51,8 @@ const footer = createElement("footer", {
   innerText: "This is the footer",
 });
 
-document.querySelector("#app").append(header, itemSection, footer);
+fetch(`https://images-api.nasa.gov/search?keywords=moon`)
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+document.querySelector("#app").append(header, itemsSection, footer);
