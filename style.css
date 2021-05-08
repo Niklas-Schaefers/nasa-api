@@ -19,20 +19,20 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  background-color: var(--secondary-text-color);
+
+  /* background-color: var(--secondary-text-color); */
   margin: 0;
   padding-top: 2em;
   grid-template-rows: 3em auto auto;
   grid-gap: 2em;
   display: grid;
-  background-image: url("./assets/space.jpeg");
   height: 100vh;
+  width: 100vw;
 
-  /* background-position: center; */
+  /* background-image: url("./assets/space.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: fixed;
-  width: 100vw;
+  background-position: fixed; */
 }
 
 body {
@@ -111,4 +111,14 @@ section img {
 
 .itemCard p {
   text-justify: auto;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
