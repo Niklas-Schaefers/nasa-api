@@ -19,28 +19,26 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  background-color: var(--secondary-text-color);
   margin: 0;
-  grid-template-rows: 2em auto 2em;
+  padding-top: 2em;
+  grid-template-rows: 3em auto auto;
+  grid-gap: 2em;
   display: grid;
-  background-image: url("./assets/space.jpeg");
   height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100vw;
 }
 
 body {
   margin: 0;
+  width: 100vw;
   height: 100vh;
 }
 
 .hero {
   color: black;
   display: grid;
-  justify-content: end;
   grid-template-columns: auto auto auto;
-  margin: 2em 0 0 0;
+  width: 100vw;
 }
 
 ul {
@@ -48,7 +46,7 @@ ul {
   margin: 0;
   justify-content: end;
   grid-template-columns: auto auto auto auto;
-  padding: 1em 2em;
+  padding: 0;
   justify-self: center;
   list-style-type: none;
   color: white;
@@ -63,16 +61,62 @@ ul a {
 }
 
 .hero input {
-  padding: 0 7em;
   background-color: transparent;
   text-align: center;
   border-style: solid;
+  color: white;
+  border-radius: 10em;
+  outline: none;
 }
 .hero input::placeholder {
   color: white;
 }
 
+footer {
+  align-self: end;
+  grid-row: 3;
+  padding-bottom: 2em;
+}
+
+section img {
+  width: 20em;
+}
+
 .hero img {
   height: 4em;
-  margin-right: 3em;
+  justify-self: center;
+}
+
+.itemSection {
+  grid-gap: 1em;
+  width: 100vw;
+  margin-top: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: scroll;
+}
+
+.itemCard {
+  width: 20em;
+  text-align: justify;
+}
+
+.itemCard p {
+  text-justify: auto;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.itemSection a {
+  text-decoration: inherit;
+  color: inherit;
 }

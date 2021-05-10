@@ -1,3 +1,18 @@
-main {
-  background-color: black;
+.itemDetailsCard {
+  display: grid;
+  grid-gap: 1em;
+  width: 100vw;
+  padding: 2em;
+}
+
+.itemDetailsCard h1 {
+  grid-row: 1;
+  grid-column: 1/3;
+  margin: 0;
+  text-align: center;
+}
+
+.itemDetailsCard p {
+  grid-column: 2;
+  margin: 0;
 }
