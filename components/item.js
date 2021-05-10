@@ -10,7 +10,11 @@ export function createItemElements({ data, links }) {
             src: links[0]?.href,
           })
         : "",
-      createElement("h1", { innerText: data[0]?.title }),
+      createElement("a", {
+        href: `details.html?id=${data[0]?.nasa_id}`,
+        children: [createElement("h1", { innerText: data[0]?.title })],
+      }),
+
       createElement("p", {
         innerText: data[0]?.description,
       }),

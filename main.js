@@ -10,7 +10,7 @@ const header = createElement("header", {
     createElement("img", { src: "./assets/orbit.png" }),
     createElement("input", {
       className: "input",
-      placeholder: "Search",
+      placeholder: "Search the space",
       autofocus: true,
       oninput: debounce((event) => {
         removeChildren(itemsSection);
@@ -50,9 +50,5 @@ const footer = createElement("footer", {
   className: "footer",
   innerText: "This is the footer",
 });
-
-fetch(`https://images-api.nasa.gov/search?keywords=moon`)
-  .then((response) => response.json())
-  .then((data) => console.log(data));
 
 document.querySelector("#app").append(header, itemsSection, footer);
